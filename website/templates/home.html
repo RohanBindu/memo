@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+    %}
+    <style type="text/css">
+      body { background: #2691d9!important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+      .colorful{
+        align-items: center;
+        margin-top: 5rem;
+        position: relative;
+        background-color: #2691d9;
+        border: 5px solid;
+        font-family: 'Bradley Hand', cursive;
+        font-size: 1.5rem;
+        border-radius: 30px;
+        color: white;
+      }
+      a{
+        color: white;
+        text-decoration: none;
+      }
+      a:hover {
+          color: white;
+          text-decoration: underline;
+      }
+      .darker{
+        color: black
+      }
+   </style>
+    <h1 align="center">Notes</h1>
+    <ul class="list-group list-inline list-group-flush" id="notes">
+      {% for note in user.notes %}
+      <li class="list-group-item darker">
+        {{ note.data }}
+        <button type="button" class="close" onClick="deleteNote({{ note.id }})">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </li>
+      {% endfor %}
+    </ul>
+    <form method="POST">
+      <textarea name="note" id="note" class="form-control"></textarea>
+      <br />
+      <div align="center">
+        <button type="submit" class="btn btn-light">Add Note</button>
+      </div>
+    </form>
+    {% endblock %}

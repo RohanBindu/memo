@@ -1,0 +1,73 @@
+{% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block
+    content %}
+    <form method="POST">
+      <style type="text/css">
+        body { background: #2691d9!important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+        .colorful{
+          align-items: center;
+          margin-top: 5rem;
+          position: relative;
+          background-color: #2691d9;
+          border: 5px solid;
+          font-family: 'Bradley Hand', cursive;
+          font-size: 1.5rem;
+          border-radius: 30px;
+          color: white;
+        }
+        a{
+          color: white;
+          text-decoration: none;
+        }
+        a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+     </style>
+      <div class="form-group">
+      </br>
+      <h3 align="center">Sign Up</h3>
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="Enter email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+          name="firstName"
+          placeholder="Enter first name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password1">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password1"
+          name="password1"
+          placeholder="Enter password"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password2">Password (Confirm)</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password2"
+          name="password2"
+          placeholder="Confirm password"
+        />
+      </div>
+      <div class="signup_link">
+        Already have an account? <a href="/login">Login</a>
+      </div>
+      <button type="submit" class="btn btn-light">Submit</button>
+    </form>
+    {% endblock %}
